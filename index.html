@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+
+    <title>Getting Clients IP</title>
+
+    <style>
+        #mapid {
+            height: 500px;
+            width: 80%;
+        }
+    </style>
+
+    <style>
+        p,
+        h1,
+        h4 {
+            color: green;
+
+        }
+
+        h5,
+        h6 {
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+    <script>
+        /* Add "https://api.ipify.org?format=json" statement
+           this will communicate with the ipify servers in
+           order to retrieve the IP address $.getJSON will
+           load JSON-encoded data from the server using a
+           GET HTTP request */
+
+        $.getJSON("https://api.ipify.org?format=json",
+            function (data) {
+
+                // Setting text of element P with id gfg
+                $("#gfg").html(data.ip);
+            })
+    </script>
+</head>
+
+
+<body>
+    <center>
+        <h1>Localizador</h1>
+        <h3>Seu IP:</h3>
+
+        <p id="gfg"></p>
+        <h4>Sua localização é:</h4>
+        <h5></h5>
+        <h6></h6>
+
+        <div id="mapid"></div>
+    </center>
+
+
+    <ul>
+
+
+
+        <script src="./Index-f.js"></script>
+</body>
+
+</html>
